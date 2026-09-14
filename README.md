@@ -60,10 +60,21 @@ helm upgrade --install kube-prometheus-stack prometheus-community/kube-prometheu
 	--namespace monitoring
 ```
 
+IdmXAyhl6NJ4B3HaTO4nN5V2I5tHR0g7SBVry2Hn
+
 ### 6) 验证安装
 
 ```bash
 kubectl get pods -n monitoring
 kubectl get servicemonitors -n monitoring
 ```
+
+### 7) 删除 kind 集群
+
+```bash
+kind delete cluster --name sre-series
+kind get clusters
+```
+
+若输出中不再包含 `sre-series`，说明集群已删除。
 
